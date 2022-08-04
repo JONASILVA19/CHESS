@@ -12,11 +12,15 @@ public abstract class Piece {
     private List<Integer> initialPosition;
     private Color color;
     private Name name;
+    private int movementCounter;
     private Status status;
 
     public Piece(int x, int y, Color color) {
         this.x = x;
         this.y = y;
+        this.color = color;
+        movementCounter = 0;
+        status = Status.IN_GAME;
         initialPosition = Arrays.asList(x, y);
     }
 
@@ -34,6 +38,22 @@ public abstract class Piece {
 
     public void setY(int y) {
         this.y = y;
+    }
+
+    public Name getName() {
+        return name;
+    }
+
+    public void setName(Name name) {
+        this.name = name;
+    }
+
+    public int getMovementCounter() {
+        return movementCounter;
+    }
+
+    public void setMovementCounter(int movementCounter) {
+        this.movementCounter = movementCounter;
     }
 
     public Status getStatus() {
